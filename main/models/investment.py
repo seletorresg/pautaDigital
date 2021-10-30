@@ -5,6 +5,7 @@ from main.models.client import Client
 from main.models.commission import Commission
 
 class Investment(models.Model):
+    name = 'none'
     months_choices = [
         ('Enero','Enero'),
         ('Febrero','Febrero'),
@@ -33,6 +34,10 @@ class Investment(models.Model):
     class Meta:
         verbose_name = 'Inversion'
         verbose_name_plural = 'Inversiones'
+
+    def __init__(self, *args, **kwargs) :
+        super().__init__(*args, **kwargs)
+        self.name = self.client_id.name + '-' + self.brand_id.name + '-' +self.campaign + '-' + self.medio + '-' + self.format + '-' + self.month + '-' + str(self.year)
 
     def __str__(self):
         name = self.client_id.name + '-' + self.brand_id.name + '-' +self.campaign + '-' + self.medio + '-' + self.format + '-' + self.month + '-' + str(self.year)

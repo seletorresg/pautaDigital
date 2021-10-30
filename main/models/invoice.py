@@ -9,7 +9,7 @@ from main.models.investment import Investment
 
 def upload_invoice(instance,filename):
     filename_base, filename_ext = os.path.splitext(filename)
-    return "plan%s_%s_%s" % (instance.plan_id,instance.investment_id,instance.invoice_number,filename,filename_ext.lower())
+    return "%s_%s_%s" % (instance.investment_id.name,str(instance.invoice_number),filename)
 
 class Invoice(models.Model):
     invoice_number = models.CharField(max_length=16)

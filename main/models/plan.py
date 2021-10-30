@@ -5,6 +5,7 @@ from main.models.client import Client
 from main.models.brand import Brand
 
 class Plan(models.Model):
+    name = 'none'
     months_choices = [
         ('Enero','Enero'),
         ('Febrero','Febrero'),
@@ -38,5 +39,10 @@ class Plan(models.Model):
         verbose_name = 'Plan de Medios'
         verbose_name_plural = 'Planes de Medios'
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.name = self.client.name +'-'+self.brand.name +'-'+str(self.month) + '-' + str(self.year)
+
     def __str__(self):
-        return self.client.name +'-'+self.brand.name +'-'+str(self.month) + '-' + str(self.year)
+        self.name = self.client.name +'-'+self.brand.name +'-'+str(self.month) + '-' + str(self.year)
+        return self.name
