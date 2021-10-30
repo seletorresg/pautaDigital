@@ -35,5 +35,5 @@ class Investment(models.Model):
         verbose_name_plural = 'Inversiones'
 
     def __str__(self):
-        name =  self.campaign + '-' + self.medio + '-' + self.format + '-' + self.month + '-' + str(self.year)
+        name = self.client_id.name + '-' + self.brand_id.name + '-' +self.campaign + '-' + self.medio + '-' + self.format + '-' + self.month + '-' + str(self.year)
         return name

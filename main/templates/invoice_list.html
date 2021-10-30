@@ -18,7 +18,7 @@
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                       <h5 class="card-title">{{invoice.invoice_number}}</h5>
-                      <a href="/download/{{invoice.file}}" class="btn btn-primary card-link">Descargar Factura</a>
+                      <a href="{% url 'download_file' invoice.file %}" class="btn btn-primary card-link">Descargar Factura</a>
                     </div>
                 </div>
             </div>

@@ -39,4 +39,4 @@ class Plan(models.Model):
         verbose_name_plural = 'Planes de Medios'
 
     def __str__(self):
-        return self.month + '-' + self.year
+        return self.client.name +'-'+self.brand.name +'-'+str(self.month) + '-' + str(self.year)
