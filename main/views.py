@@ -4,6 +4,7 @@ from django.shortcuts import render
 from main.models.client import Client
 from main.models.brand import Brand
 from main.models.invoice import Invoice
+
 from django.http import HttpResponse
 from django.views.generic import TemplateView, ListView, DetailView
 # Import mimetypes module

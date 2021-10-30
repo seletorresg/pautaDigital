@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'pautaDigital.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pautaDigital',
+        'NAME': 'media_planner',
         'USER': 'taller',
         'PASSWORD': 'selenaVive20',
         'HOST': 'localhost',

@@ -25,7 +25,7 @@ class Investment(models.Model):
     client_id = models.ForeignKey(Client, on_delete=SET_NULL, null=True)
     brand_id = models.ForeignKey(Brand, on_delete=SET_NULL, null=True)
     value = models.FloatField()
-    comission = models.ForeignKey(Commission, on_delete=SET_NULL, null=True)
+    commission = models.ForeignKey(Commission, on_delete=SET_NULL, null=True)
     available_value = models.FloatField()
     month = models.TextField(choices=months_choices)
     year = models.PositiveSmallIntegerField()

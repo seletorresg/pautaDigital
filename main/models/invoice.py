@@ -18,11 +18,11 @@ def upload_invoice(instance,filename):
 class Invoice(models.Model):
     invoice_number = models.CharField(max_length=16)
     value = models.FloatField()
-    currency = models.ForeignKey(Currency, on_delete=SET_NULL, null=True, blank=True)
+    currency_id = models.ForeignKey(Currency, on_delete=SET_NULL, null=True, blank=True)
     date = models.DateField()
-    plan = models.ForeignKey(Plan, on_delete=SET_NULL, null=True, blank=True)
-    investment = models.ForeignKey(Investment,on_delete=SET_NULL, null=True, blank=True)
-    file = models.FileField(upload_to=upload_invoice)
+    plan_id = models.ForeignKey(Plan, on_delete=SET_NULL, null=True, blank=True)
+    investment_id = models.ForeignKey(Investment,on_delete=SET_NULL, null=True, blank=True)
+    document = models.FileField(upload_to=upload_invoice)
 
     class Meta:
         verbose_name = 'Factura'
