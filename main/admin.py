@@ -5,13 +5,14 @@ from main.models import *
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
     pass
+
 @admin.register(Brand)
 class BrandAdmin(admin.ModelAdmin):
     pass
+
 @admin.register(Invoice)
 class InvoiceAdmin(admin.ModelAdmin):
-    pass
-
+    list_display = ("invoice_number","date","investment_id","document")
 @admin.register(Commission)
 class CommissionAdmin(admin.ModelAdmin):
     pass
@@ -30,4 +31,5 @@ class InvestmentAdmin(admin.ModelAdmin):
 
 @admin.register(Plan)
 class PlanAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("client","brand","month","year","total_invested","total_available")
+    search_fields = ("client__name","brand__name")
