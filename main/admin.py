@@ -2,42 +2,32 @@ from django.contrib import admin
 from main.models import *
 
 # Register your models here.
+@admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
     pass
-
-admin.site.register(Client,ClientAdmin)
-
+@admin.register(Brand)
 class BrandAdmin(admin.ModelAdmin):
     pass
-
-admin.site.register(Brand,BrandAdmin)
-
+@admin.register(Invoice)
 class InvoiceAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(Invoice,InvoiceAdmin)
-
+@admin.register(Commission)
 class CommissionAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(Commission,CommissionAdmin)
-
+@admin.register(Creditor)
 class CreditorAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(Creditor,CreditorAdmin)
-
+@admin.register(Currency)
 class CurrencyAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(Currency,CurrencyAdmin)
-
+@admin.register(Investment)
 class InvestmentAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(Investment,InvestmentAdmin)
-
+@admin.register(Plan)
 class PlanAdmin(admin.ModelAdmin):
     pass
-
-admin.site.register(Plan,PlanAdmin)
