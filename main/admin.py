@@ -31,5 +31,6 @@ class InvestmentAdmin(admin.ModelAdmin):
 
 @admin.register(Plan)
 class PlanAdmin(admin.ModelAdmin):
+    #change_list_template = "admin/upload_csv_template.html"
     list_display = ("client","brand","month","year","total_invested","total_available")
     search_fields = ("client__name","brand__name")
