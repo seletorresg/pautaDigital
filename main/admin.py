@@ -2,42 +2,35 @@ from django.contrib import admin
 from main.models import *
 
 # Register your models here.
+@admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(Client,ClientAdmin)
-
+@admin.register(Brand)
 class BrandAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(Brand,BrandAdmin)
-
+@admin.register(Invoice)
 class InvoiceAdmin(admin.ModelAdmin):
-    pass
-
-admin.site.register(Invoice,InvoiceAdmin)
-
+    list_display = ("invoice_number","date","investment_id","document")
+@admin.register(Commission)
 class CommissionAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(Commission,CommissionAdmin)
-
+@admin.register(Creditor)
 class CreditorAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(Creditor,CreditorAdmin)
-
+@admin.register(Currency)
 class CurrencyAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(Currency,CurrencyAdmin)
-
+@admin.register(Investment)
 class InvestmentAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(Investment,InvestmentAdmin)
-
+@admin.register(Plan)
 class PlanAdmin(admin.ModelAdmin):
-    pass
-
-admin.site.register(Plan,PlanAdmin)
+    #change_list_template = "admin/upload_csv_template.html"
+    list_display = ("client","brand","month","year","total_invested","total_available")
+    search_fields = ("client__name","brand__name")

@@ -1,4 +1,3 @@
-from datetime import timezone
 from django.db import models
 from django.db.models.deletion import SET_NULL
 from django.utils.timezone import now as timezone_now
@@ -9,11 +8,8 @@ from main.models.plan import Plan
 from main.models.investment import Investment
 
 def upload_invoice(instance,filename):
-    now = timezone_now()
     filename_base, filename_ext = os.path.splitext(filename)
-    time_stamp = now.strftime("%d%H%M%S")
-    pk = instance.invoice_number
-    return "files/facturas/%s_%s%s" % (pk,time_stamp,filename_ext.lower())
+    return "%s_%s_%s" % (instance.investment_id.name,str(instance.invoice_number),filename)
 
 class Invoice(models.Model):
     invoice_number = models.CharField(max_length=16)

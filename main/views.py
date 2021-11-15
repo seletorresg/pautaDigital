@@ -58,12 +58,13 @@ def show_invoices(request):
     context = {"invoices": invoices}
     return render(request, template_name=template_name, context=context)
 
-def download_pdf_file(request, filename=''):
+def download_pdf_file(request, fileName=''):
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    filepath = BASE_DIR + filename
+    filepath = BASE_DIR + '\/media\/' + fileName
     path = open(filepath, 'rb')
+    print(filepath)
     mime_type, _ = mimetypes.guess_type(filepath)
     response = HttpResponse(path, content_type=mime_type)
-    response['Content-Disposition'] = "attachment; filename=%s" % filename
+    response['Content-Disposition'] = "attachment; filename=%s" % fileName
     return response
 

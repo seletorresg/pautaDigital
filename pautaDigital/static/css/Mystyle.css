@@ -1,0 +1,16 @@
+.my-navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.5;
+    background: #f1cb31;
+    padding-bottom: 0.5;
+}
+
+.btn-primary {
+    color: rgb(0, 0, 0);
+    background-color: #f1cb31;
+    border-color: #f1cb31;
+}
